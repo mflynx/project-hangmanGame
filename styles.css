@@ -4,10 +4,15 @@
   margin: 0;
   font-family: "Reggae One", cursive;
 }
+#sound-icon {
+  position : absolute;
+  width: 40px;
+}
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(194, 53, 53);
 }
 h1 {
   margin: 20px 0;
@@ -17,27 +22,40 @@ header button {
   height: 40px;
   font-size: 1.2rem;
 }
+header h2{
+  width: 75%;
+  text-align: justify;
+  margin: 20px 0;
+  padding: 10px;
+  border-style: dotted;
+}
 #hangman {
   display: flex;
   justify-content: space-between;
 }
 #hangman img {
-  width: 600px;
+  width: 45%;
   margin-right: 50px;
 }
-#left-pannel {
+#left-panel {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   margin-left: 50px;
+  width: 45%;
 }
 #secret-word {
   font-size: 1.7rem;
   letter-spacing: 0.5rem;
+  display: none;
 }
 #message-box {
-    display: none;
+    display: block;
+    width: 60%;
+}
+#message-box span {
+  color: rgb(124, 14, 14)
 }
 #letters {
   display: flex;

@@ -4,22 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hanging Man</title>
+    <title>Hangman game</title>
+    <script type="module" src="./app.js"></script>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="./app.js"></script>
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="icon" type="image/gif" href="img/favicon-16x16.png">
   </head>
   <body>
+    <!-- <audio
+      autoplay
+      loop
+      controls
+      src="./sounds/a-witch-montyPython.mp3"
+    ></audio> -->
+    <img id = "sound-icon" src="./img/sound-icon.png" alt="sound icon">
+
     <header>
-      <h1>The Hangman</h1>
+      <h1>Hang the witch!</h1>
       <button>Start</button>
+      <h2>
+        You are in the middle of an angry crowd accusing you of being a witch.
+        You have one chance to save your life by finding the magic word that
+        will make you fly away. Click on the correct letters to reveal them in
+        the word.<br>6 wrong guesses and you're hangued. 10 seconds and you're
+        hangued.<br>Good luck !
+      </h2>
     </header>
     <div id="hangman">
-      <div id="left-pannel">
+      <div id="left-panel">
+        <p></p>
         <div id="secret-word"></div>
         <h2 id="message-box"></h2>
         <div id="letters">
@@ -51,7 +69,7 @@
           <button>Z</button>
         </div>
       </div>
-      <img src="./img/hangman-welcome.png" alt="hangman image" />
+      <img src="./img/angry-crowd-drawing.jpg" alt="hangman image" />
     </div>
   </body>
 </html>
