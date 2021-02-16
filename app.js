@@ -119,7 +119,7 @@ const hangmanGame = {
     if (this.wordDisplay === this.wordToGuess) {
       messageBox.textContent =
         "Well done! You've escaped!...for now. Try again?";
-      hangmanImage.src = "./img/flying-witch";
+      hangmanImage.src = "./img/flying-witch.png";
       return true;
     }
   },
@@ -128,7 +128,7 @@ const hangmanGame = {
     startBtn.style.display = "none";
     messageBox.style.display = "none";
     welcomeMessage.style.display = "none";
-    angryCrowdSound.
+    // angryCrowdSound.
     letters.forEach((letter) => letter.classList.remove("selected"));
     this.guessCount = 0;
     this.wordDisplay = "";
@@ -163,4 +163,4 @@ soundBtn.addEventListener("click",soundHandler);
 
 //enable audio + loop
 audio.loop=true;
-audio.play();
+// audio.play();
