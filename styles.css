@@ -3,12 +3,20 @@
   padding: 0;
   margin: 0;
   font-family: "Reggae One", cursive;
+  /* border: 1px black solid; */
+}
+body {
+  background: transparent;
+  /* background-image: url("./img/medieval-village.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
   /* background-color: rgb(218, 138, 138); */
-  border: 1px black solid;
 }
 #sound-icon {
   position : absolute;
-  width: 40px;
+  width: 50px;
+  background: rgb(182, 177, 177);
+  border-radius: 50%;
 }
 header {
   display: flex;
@@ -18,44 +26,35 @@ header {
 h1 {
   margin: 20px 0;
 }
-header button {
-  width: 80px;
-  height: 40px;
-  font-size: 1.2rem;
-  border-radius: 50%;
-  box-shadow: 10px 5px 10px;
-}
-header button:hover {
-  background-color: rgb(124, 14, 14);
-  color:rgb(182, 177, 177)
-}
 header h2{
   font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
   width: 75%;
   text-align: justify;
-  margin: 20px 0;
   padding: 10px;
   border-style: dotted;
 }
-span {
+.highlight {
   font-family: "Reggae One", cursive;
   color: rgb(124, 14, 14)
 }
 #hangman {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 #hangman img {
   width: 45%;
-  margin-right: 50px;
-  background-color: transparent;
+  /* margin-right: 50px; */
+  /* background-color: rgba(223, 211, 139, 0.322);
+  border-radius: 30%; */
 }
 #left-panel {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   width: 45%;
 }
 #timer-wrap {
@@ -64,6 +63,8 @@ span {
 }
 #timer-wrap p{
   padding : 0 5px;
+  text-align: center;
+  /* font-size: 1.2rem; */
 }
 #secret-word {
   font-size: 1.7rem;
@@ -75,6 +76,17 @@ span {
     display: block;
     width: 60%;
     text-align: center;
+}
+#start-btn {
+  width: 80px;
+  height: 40px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  box-shadow: 10px 5px 10px;
+}
+#start-btn:hover {
+  background-color: rgb(124, 14, 14);
+  color:rgb(182, 177, 177)
 }
 #letters {
   display: flex;
@@ -88,4 +100,39 @@ span {
 }
 .selected {
   background-color: rgb(71, 69, 69);
+}
+@keyframes shake {
+  25%, 75% {
+      transform: translateX(10px);
+  }
+  50% {
+      transform: translateX(-10px);
+      transform: translateY(2px);
+  }
+}
+.shake {
+  animation: 0.3s linear shake;
+}
+@keyframes blink {
+  0%,
+  40%,
+  80% {
+    opacity: 0;
+  }
+  20%,
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+.blink {
+  animation: blink 2.5s linear;
+}
+@keyframes fly {
+  50% {
+    transform: translate(-15px, 5px) rotate(-15deg);
+  }
+}
+.fly {
+  animation: fly 2s infinite;
 }

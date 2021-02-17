@@ -2,7 +2,7 @@
 let interval, timer;
 
 //DOM elements
-const startBtn = document.querySelector("header button");
+const startBtn = document.querySelector("#start-btn");
 const soundBtn = document.querySelector("#sound-icon")
 const welcomeMessage = document.querySelector("header h2");
 const letters = document.querySelectorAll("#letters button");
@@ -82,9 +82,11 @@ const hangmanGame = {
   },
   displayGuesses() {
     if (this.wrongGuessCount<=0) {
+      guessP.classList.add("shake");
       guessP.innerHTML = `no more wrong guesses left!`
     } else {
     guessP.innerHTML = `${this.wrongGuessCount} wrong guesses left!`}
+    // guessP.classList.remove("shake");
   },
   compareLetter(letter) {
     // compares letter to each letter in wordToGuess & returns a string to update the display of secretWord
@@ -129,9 +131,10 @@ const hangmanGame = {
       guessP.innerHTML = "Two many wrong guesses, you're transformed into a hanging witch!"
     }
     if (this.hangStatus === 6) {
-      messageBox.innerHTML = `Sorry you are dead ! The magic word was <span>${this.wordToGuess}</span>. Try again?`;
+      messageBox.innerHTML = `Sorry you are dead ! The magic word was <span class="highlight">${this.wordToGuess}</span>. Try again?`;
       this.pictureChange();
       audio.src="./sounds/a-witch-montyPython.mp3";
+      audio.loop=true;
       audio.play();
       return true;
     }
@@ -140,8 +143,10 @@ const hangmanGame = {
     if (this.wordDisplay === this.wordToGuess) {
       timerP.innerHTML = "Well done!";
       guessP.style.display = "none";
-      messageBox.innerHTML = "<span>Fly Witch, Fly!</span><br>You have found the magic word...for now.<br>Try again?";
-      hangmanImage.src = "./img/flying-witch.png";
+      secretWord.classList.add("blink");
+      messageBox.innerHTML = `<span class="highlight">Fly Witch, Fly!</span><br>You have found the magic word...for now.<br>Try again?`;
+      hangmanImage.classList.add("fly");
+      hangmanImage.src = "./img/flying-witch-cut.png";
       audio.src = "./sounds/witch-laugh.mp3";
       witchLaugh.play();
       return true;
@@ -150,10 +155,12 @@ const hangmanGame = {
   resetGame() {
     timerP.innerHTML = `20 sec and`;
     guessP.style.display = "block";
+    guessP.classList.remove("shake");
+    secretWord.classList.remove("blink");
+    hangmanImage.classList.remove("fly");
     startBtn.style.display = "none";
     messageBox.style.display = "none";
     welcomeMessage.style.display = "none";
-    // angryCrowdSound.
     letters.forEach((letter) => letter.classList.remove("selected"));
     this.wrongGuessCount = 5;
     this.wordDisplay = "";
@@ -174,11 +181,11 @@ function selectLetter(event) {
 // event handler for sound : toggle icon src and volume prop
 function soundHandler(evt) {
   console.log(audio);
-  if (evt.target.src==="http://localhost:3000/img/sound-icon.png") { //*****to be changed
-    evt.target.src = "./img/sound-icon-mute.png";
+  if (evt.target.src==="http://localhost:3000/img/sound-icon-cut.png") { //*****to be changed
+    evt.target.src = "./img/sound-icon-mute-cut.png";
     audio.volume=0;
   } else {
-    evt.target.src = "./img/sound-icon.png";
+    evt.target.src = "./img/sound-icon-cut.png";
     audio.volume=1;
   }
 }
