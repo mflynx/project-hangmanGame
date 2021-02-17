@@ -3,7 +3,8 @@
   padding: 0;
   margin: 0;
   font-family: "Reggae One", cursive;
-  background-color: rgb(218, 138, 138);
+  /* background-color: rgb(218, 138, 138); */
+  border: 1px black solid;
 }
 #sound-icon {
   position : absolute;
@@ -18,16 +19,27 @@ h1 {
   margin: 20px 0;
 }
 header button {
-  width: 70px;
+  width: 80px;
   height: 40px;
   font-size: 1.2rem;
+  border-radius: 50%;
+  box-shadow: 10px 5px 10px;
+}
+header button:hover {
+  background-color: rgb(124, 14, 14);
+  color:rgb(182, 177, 177)
 }
 header h2{
+  font-family: 'Courier New', Courier, monospace;
   width: 75%;
   text-align: justify;
   margin: 20px 0;
   padding: 10px;
   border-style: dotted;
+}
+span {
+  font-family: "Reggae One", cursive;
+  color: rgb(124, 14, 14)
 }
 #hangman {
   display: flex;
@@ -46,18 +58,23 @@ header h2{
   margin-left: 50px;
   width: 45%;
 }
+#timer-wrap {
+  display: flex;
+  justify-content: center;
+}
+#timer-wrap p{
+  padding : 0 5px;
+}
 #secret-word {
   font-size: 1.7rem;
   letter-spacing: 0.5rem;
   display: none;
 }
 #message-box {
+  font-family: 'Courier New', Courier, monospace;
     display: block;
     width: 60%;
     text-align: center;
-}
-#message-box span {
-  color: rgb(124, 14, 14)
 }
 #letters {
   display: flex;

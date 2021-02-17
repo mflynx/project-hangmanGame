@@ -26,18 +26,21 @@
 
     <header>
       <h1>Hang the witch!</h1>
-      <button>Start</button>
       <h2>
         You are in the middle of an angry crowd accusing you of being a witch.
-        You have one chance to save your life by finding the magic word that
-        will make you fly away. Click on the correct letters to reveal them in
-        the word.<br>6 wrong guesses and you're hangued. 10 seconds and you're
-        hangued.<br>Good luck !
+        You have one chance to save your life by finding the <span>magic word</span> that
+        will enable you to fly away. Click on the correct letters to reveal them in
+        the word.<br>You're allowed <span>20 seconds</span> and <span>5 wrong guesses</span> before they hang the witch.
+        <br><span>Good luck !</span>
       </h2>
+      <button><span>Start</span></button>
     </header>
     <div id="hangman">
       <div id="left-panel">
-        <p></p>
+        <div id="timer-wrap">
+        <p id="timer"></p>
+        <p id="guesses"></p>
+      </div>
         <div id="secret-word"></div>
         <h2 id="message-box"></h2>
         <div id="letters">
@@ -69,7 +72,7 @@
           <button>Z</button>
         </div>
       </div>
-      <img src="./img/angry-crowd-drawing.jpg" alt="hangman image" />
+      <img src="./img/hangman0.jpg" alt="hangman image" />
     </div>
   </body>
 </html>
