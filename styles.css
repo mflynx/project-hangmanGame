@@ -3,17 +3,14 @@
   padding: 0;
   margin: 0;
   font-family: "Reggae One", cursive;
-  /* border: 1px black solid; */
 }
 body {
-  /* background: transparent; */
   background-image: url("./img/medieval-village-calque.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-color: rgb(218, 138, 138); */
 }
 #sound-icon {
-  position : absolute;
+  position: absolute;
   width: 50px;
   background: rgb(182, 177, 177);
   border-radius: 50%;
@@ -29,8 +26,8 @@ header {
 h1 {
   margin: 20px 0;
 }
-header h2{
-  font-family: 'Courier New', Courier, monospace;
+header h2 {
+  font-family: "Courier New", Courier, monospace;
   font-size: 1.1rem;
   width: 75%;
   text-align: justify;
@@ -39,7 +36,7 @@ header h2{
 }
 .highlight {
   font-family: "Reggae One", cursive;
-  color: rgb(124, 14, 14)
+  color: rgb(124, 14, 14);
 }
 #hangman {
   display: flex;
@@ -48,26 +45,22 @@ header h2{
 }
 #hangman img {
   width: 45%;
-  /* margin-right: 50px; */
-  /* background-color: rgba(223, 211, 139, 0.322);
-  border-radius: 30%; */
 }
 #left-panel {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* margin-left: 50px; */
   width: 45%;
+  max-height: 550px;
 }
 #timer-wrap {
   display: flex;
   justify-content: center;
 }
-#timer-wrap p{
-  padding : 0 5px;
+#timer-wrap p {
+  padding: 0 5px;
   text-align: center;
-  /* font-size: 1.2rem; */
 }
 #secret-word {
   font-size: 1.7rem;
@@ -75,10 +68,10 @@ header h2{
   display: none;
 }
 #message-box {
-  font-family: 'Courier New', Courier, monospace;
-    display: block;
-    width: 60%;
-    text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  display: block;
+  width: 60%;
+  text-align: center;
 }
 #start-btn {
   width: 80px;
@@ -89,7 +82,7 @@ header h2{
 }
 #start-btn:hover {
   background-color: rgb(124, 14, 14);
-  color:rgb(182, 177, 177)
+  color: rgb(182, 177, 177);
 }
 #letters {
   display: flex;
@@ -105,12 +98,13 @@ header h2{
   background-color: rgb(71, 69, 69);
 }
 @keyframes shake {
-  25%, 75% {
-      transform: translateX(10px);
+  25%,
+  75% {
+    transform: translateX(10px);
   }
   50% {
-      transform: translateX(-10px);
-      transform: translateY(2px);
+    transform: translateX(-10px);
+    transform: translateY(2px);
   }
 }
 .shake {
@@ -133,9 +127,24 @@ header h2{
 }
 @keyframes fly {
   50% {
-    transform: translate(-15px, 5px) rotate(-15deg);
+    transform: translateY(-50px);
   }
 }
 .fly {
   animation: fly 2s infinite;
+}
+@keyframes hang {
+  0% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+.hang {
+  animation: hang 2s infinite;
+  transform-origin: top;
 }
