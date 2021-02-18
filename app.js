@@ -1,3 +1,4 @@
+console.log("version 18/02/21 11:30");
 // Global variables
 let interval, timer;
 
@@ -178,16 +179,12 @@ function selectLetter(event) {
   secretWord.textContent = hangmanGame.compareLetter(event.target.textContent);
   console.log(hangmanGame);
 }
-// event handler for sound : toggle icon src and volume prop
+// event handler for sound : toggle icon src and mute prop
 function soundHandler(evt) {
-  console.log("audio file: ",audio);
-  console.log("target: ",evt.target);
-  if (evt.target.src==="./img/sound-icon.png") { 
-    console.log("entered if");
+  if (!audio.muted) { 
     evt.target.src = "./img/sound-icon-mute.png";
     audio.muted=true;
   } else {
-    console.log("entered else");
     evt.target.src = "./img/sound-icon.png";
     audio.muted=false;
   }
