@@ -6,8 +6,8 @@
   /* border: 1px black solid; */
 }
 body {
-  background: transparent;
-  /* background-image: url("./img/medieval-village.jpg"); */
+  /* background: transparent; */
+  background-image: url("./img/medieval-village-calque.png");
   background-repeat: no-repeat;
   background-size: cover;
   /* background-color: rgb(218, 138, 138); */
@@ -17,6 +17,9 @@ body {
   width: 50px;
   background: rgb(182, 177, 177);
   border-radius: 50%;
+}
+#sound-icon:hover {
+  cursor: pointer;
 }
 header {
   display: flex;

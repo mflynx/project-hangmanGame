@@ -12,9 +12,9 @@ const hangmanImage = document.querySelector("#hangman img");
 const timerP = document.querySelector("#timer");
 const guessP = document.querySelector("#guesses");
 //audio
-const audio = new Audio("./sounds/a-witch-montyPython.mp3");
-const clockTick = new Audio("./sounds/clock-ticking.mp3");
-const witchLaugh = new Audio("./sounds/witch-laugh.mp3");
+const audio = new Audio("./sounds/a-witch-monty-python.mp3");
+// const clockTick = new Audio("./sounds/clock-ticking.mp3");
+// const witchLaugh = new Audio("./sounds/witch-laugh.mp3");
 
 
 const hangmanGame = {
@@ -25,7 +25,7 @@ const hangmanGame = {
   previousWordDisplay: "",
   hangStatus: 0,
   hangmanImages: [
-    "./img/hangman0.jpg",
+    "./img/hangman0.png",
     "./img/hangman1.png",
     "./img/hangman2.png",
     "./img/hangman3.png",
@@ -133,7 +133,7 @@ const hangmanGame = {
     if (this.hangStatus === 6) {
       messageBox.innerHTML = `Sorry you are dead ! The magic word was <span class="highlight">${this.wordToGuess}</span>. Try again?`;
       this.pictureChange();
-      audio.src="./sounds/a-witch-montyPython.mp3";
+      audio.src="./sounds/a-witch-monty-python.mp3";
       audio.loop=true;
       audio.play();
       return true;
@@ -146,9 +146,9 @@ const hangmanGame = {
       secretWord.classList.add("blink");
       messageBox.innerHTML = `<span class="highlight">Fly Witch, Fly!</span><br>You have found the magic word...for now.<br>Try again?`;
       hangmanImage.classList.add("fly");
-      hangmanImage.src = "./img/flying-witch-cut.png";
+      hangmanImage.src = "./img/flying-witch.png";
       audio.src = "./sounds/witch-laugh.mp3";
-      witchLaugh.play();
+      audio.play();
       return true;
     }
   },
@@ -180,13 +180,16 @@ function selectLetter(event) {
 }
 // event handler for sound : toggle icon src and volume prop
 function soundHandler(evt) {
-  console.log(audio);
-  if (evt.target.src==="http://localhost:3000/img/sound-icon-cut.png") { //*****to be changed
-    evt.target.src = "./img/sound-icon-mute-cut.png";
-    audio.volume=0;
+  console.log("audio file: ",audio);
+  console.log("target: ",evt.target);
+  if (evt.target.src==="./img/sound-icon.png") { 
+    console.log("entered if");
+    evt.target.src = "./img/sound-icon-mute.png";
+    audio.muted=true;
   } else {
-    evt.target.src = "./img/sound-icon-cut.png";
-    audio.volume=1;
+    console.log("entered else");
+    evt.target.src = "./img/sound-icon.png";
+    audio.muted=false;
   }
 }
 
