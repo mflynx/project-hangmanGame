@@ -1,4 +1,4 @@
-console.log("version 18/02/21 16:10");
+console.log("version 18/02/21 16:35");
 // Global variables
 let interval, timer;
 
